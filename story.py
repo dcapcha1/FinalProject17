@@ -1,20 +1,26 @@
 # story of life
 
-print('***Some useful info: type y for yes and n for no in response to yes or no questions')
+print('''***Some useful info: type 'y' for yes and 'n' for no in response to yes or no questions''')
 
 # this is where class info will be
 
+class Human(object):
 
+    def __init__(self, name, health):
+        self.name = name
+        self.health = health
 
+    def say_name(self):
+        print(f'{self.name}')
 
-
-
-
-#---------
+    def take_damage(self, damage = 20):
+        self.health -= damage
+        print(f'''You are now at {self.health} health. Ouch. Git gud.''')
 
 while True:
+    human1 = Human(input('''What is your name? '''), 100)
     # first decision, only answer is y
-    ans = input('It is pitch-black except for the small circle of light in the distance. Go toward the light? ')
+    ans = input(f'''It is pitch-black except for the small circle of light in the distance. Go toward the light, {human1.name}? ''')
     if ans == 'y':
         print('''The light is getting bigger, until you're completely enveloped in the light. Congrats! You just made it out of the womb!
         You're very slimy though. Someone's holding you, probably the doctor. Everything is starting to get clearer now.''')
@@ -34,17 +40,21 @@ while True:
                     if ans2 == 'y':
                         print('''You're better than that. Don't do it.''')
                         ans4 = input('''You're jealous, so you destroy it, right? ''')
-                           while True:
-                               # branch 4
-                               if ans4 == 'y':
-                                   ans5 = input('''If you continue to say yes, you will be banished to the shadow realm! Do you want that? ''')
-                                   while True:
-                                       if ans5 == 'y':
-                                           print('''You asked for it. So, as time passes by, you see some gangsters ''')
+                        while True:
+                            # branch 4
+                            if ans4 == 'y':
+                                ans5 = input('''If you continue to say yes, you will be banished to the shadow realm! Do you want that? ''')
+                                while True:
+                                    # branch 5
+                                    if ans5 == 'y':
+                                        print(f'''You asked for it. So, as time passes by, you see some gangsters coming toward you. You look 'em in the eye and know they're after you.
+                                        One of the kind African-American members approaches you and takes out his bat. He beats the crap out of you. First hit. {human1.take_damage()}.
+                                        Second hit. {human1.take_damage()}. He keeps hitting at you. You are now dead. Gg, {human1.name}.''')
+                                        break
 
-                                # branch 5
-                                if ans5 == 'n':
-                                    print('''Alright, I'm glad you changed your ways.''')
+                                    # branch 5
+                                    if ans5 == 'n':
+                                        print('''Alright, I'm glad you changed your ways.''')
 
 
 
