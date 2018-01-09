@@ -43,13 +43,21 @@ while True:
                         while True:
                             # branch 4
                             if ans4 == 'y':
-                                ans5 = input('''If you continue to say yes, you will be banished to the shadow realm! Do you want that? ''')
-                                while True:
+                                ans5 = input('''If you continue to say yes, you will be banished to the shadow realm, do you want that? ''')
+                                while ans5 == 'y':
                                     # branch 5
                                     if ans5 == 'y':
                                         print(f'''You asked for it. So, as time passes by, you see some gangsters coming toward you. You look 'em in the eye and know they're after you.
-                                        One of the kind African-American members approaches you and takes out his bat. He beats the crap out of you. First hit. {human1.take_damage()}.
-                                        Second hit. {human1.take_damage()}. He keeps hitting at you. You are now dead. Gg, {human1.name}.''')
+                                        One of the kind African-American members approaches you and takes out his bat. He beats the crap out of you. First hit.''')
+                                        human1.take_damage()
+                                        print('''Second hit.''')
+                                        human1.take_damage()
+                                        print('''He keeps hitting at you.''')
+                                        human1.take_damage()
+                                        human1.take_damage()
+                                        human1.take_damage()
+
+                                        print(f'''You are now dead. Gg no re, {human1.name}. Actually nvm, re cuz I don't know how else to make this code work.''')
                                         break
 
                                     # branch 5
