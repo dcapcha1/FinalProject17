@@ -44,7 +44,7 @@ while True:
                             # branch 4
                             if ans4 == 'y':
                                 ans5 = input('''If you continue to say yes, you will be banished to the shadow realm, do you want that? ''')
-                                while ans5 == 'y':
+                                while True:
                                     # branch 5
                                     if ans5 == 'y':
                                         print(f'''You asked for it. So, as time passes by, you see some gangsters coming toward you. You look 'em in the eye and know they're after you.
@@ -56,16 +56,12 @@ while True:
                                         human1.take_damage()
                                         human1.take_damage()
                                         human1.take_damage()
-
                                         print(f'''You are now dead. Gg no re, {human1.name}. Actually nvm, re cuz I don't know how else to make this code work.''')
                                         break
 
                                     # branch 5
                                     if ans5 == 'n':
-                                        print('''Alright, I'm glad you changed your ways.''')
-
-
-
+                                        print('''Alright, I'm glad you finally came to your senses. ''')
 
 
 
@@ -96,4 +92,3 @@ while True:
     if ans == 'n':
         print('Come on, you know you wanna go toward the light. That is the only way the story will progress.')
         input('It is pitch-black except for the small circle of light in the distance. Go toward the light? ')
-
