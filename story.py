@@ -1,6 +1,7 @@
 # story of life
 
-print('''***Some useful info: type 'y' for yes and 'n' for no in response to yes or no questions''')
+print('''***Some useful info: type 'y' for yes and 'n' for no in response to yes or no questions
+            If you want to exit the game (like when you reach an ending) enter a letter that isn't 'y' or 'n' into an input function that asks for 'y' or 'n' ''')
 
 # this is where class info will be
 
@@ -25,6 +26,15 @@ class Human(object):
     def dep_level_dec(self, dec = 20):
         self.dep_level -= dec
         print(f'''You are now at {self.dep_level} depression level.''')
+
+    def fight(self, damage = 10):
+        self.health -= damage
+        print(f'''Your enemy is now at {self.health} health. But I didn't hear no bell!''')
+
+    def fatality(self, damage = 1000):
+        self.health -= damage
+        print(f'''Your enemy is now at {self.health} health. Damn, you didn't have to do him like that!''')
+
 
 while True:
     human1 = Human(input('''What is your name? '''), 100, 0)
@@ -82,14 +92,25 @@ while True:
                     # branch 2
                     if ans2 == 'n':
                         print('''Good, anthropoid. No trouble for you today!''')
-                        ans6 = input('''Years go by, and you're in middle school. Your favorite teacher, {teacher.name}, is teaching there. {teacher.name}
+                        ans6 = input(f'''Years go by, and you're in middle school. Your favorite teacher, {teacher.name}, is teaching there. {teacher.name}
                         never gives any homework or tests. One day, you walk into the classroom to retrieve your forgotten notebook. But before you go in,
                         you see {teacher.name} making out with another teacher. Do you tell on them? ''')
                         while True:
                             if ans6 == 'y':
-                                print('''Good, that was the right thing to do.''')
-
-
+                                print(f'''Good, that was the right thing to do. {teacher.name} may have been your favorite teacher, but no one is above the law.''')
+                                print(f'''Unfortunately, since your favorite teacher was fired, the new teacher is terrible. You're getting homework every day and
+                                even pop quizzes! The person you hate the most, {person.name}, approaches you one day and doesn't look happy about the new teacher.
+                                And he knows you're the reason why there's a new teacher.''')
+                                ans7 = input('''He's ready to throw hands. You're ready to throw hands. But do you? ''')
+                                if ans7 == 'y':
+                                    print('''You throw the first punch.''')
+                                    human1.fight()
+                                    print('''Do another, come on, give him the ol one two!''')
+                                    for x in range(2):
+                                        human1.fight()
+                                    print('''Give him an uppercut, finish him off!''')
+                                    human1.fatality()
+                                    break
 
             # branch 1
             if ans1 == 'n':
