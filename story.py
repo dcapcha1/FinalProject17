@@ -6,9 +6,10 @@ print('''***Some useful info: type 'y' for yes and 'n' for no in response to yes
 
 class Human(object):
 
-    def __init__(self, name, health):
+    def __init__(self, name, health, dep_level):
         self.name = name
         self.health = health
+        self.dep_level = dep_level
 
     def say_name(self):
         print(f'{self.name}')
@@ -17,8 +18,19 @@ class Human(object):
         self.health -= damage
         print(f'''You are now at {self.health} health. Ouch. Git gud.''')
 
+    def dep_level_inc(self, damage = 10):
+        self.dep_level += damage
+        print(f'''You are now at {self.dep_level} depression level.''')
+
+    def dep_level_dec(self, dec = 20):
+        self.dep_level -= dec
+        print(f'''You are now at {self.dep_level} depression level.''')
+
 while True:
-    human1 = Human(input('''What is your name? '''), 100)
+    human1 = Human(input('''What is your name? '''), 100, 0)
+    teacher = Human(input('''What is your favorite teacher's name? '''), 100, 0)
+    person = Human(input('''Who do you hate the most? '''), 100, 0)
+    print('''Alrighty then, let the story begin!''')
     # first decision, only answer is y
     ans = input(f'''It is pitch-black except for the small circle of light in the distance. Go toward the light, {human1.name}? ''')
     if ans == 'y':
@@ -52,22 +64,30 @@ while True:
                                         human1.take_damage()
                                         print('''Second hit.''')
                                         human1.take_damage()
-                                        print('''He keeps hitting at you.''')
+                                        print('''He keeps hitting you.''')
                                         human1.take_damage()
                                         human1.take_damage()
                                         human1.take_damage()
-                                        print(f'''You are now dead. Gg no re, {human1.name}. Actually nvm, re cuz I don't know how else to make this code work.''')
+                                        print(f'''You are now dead. Gg. This is an ending, kind of. But you can take a different route now.''')
                                         break
 
                                     # branch 5
                                     if ans5 == 'n':
-                                        print('''Alright, I'm glad you finally came to your senses. ''')
+                                        print('''Alright, I'm glad you finally came to your senses. No one likes the shadow realm.''')
+                                        # <insert 2nd branch 1 after finishing that branch>
 
-
-
+                            if ans4 == 'n':
+                                print('''Good, don't ever think about doing that.''')
+                                # <insert 2nd branch 1 after finishing that branch>
                     # branch 2
                     if ans2 == 'n':
                         print('''Good, anthropoid. No trouble for you today!''')
+                        ans6 = input('''Years go by, and you're in middle school. Your favorite teacher, {teacher.name}, is teaching there. {teacher.name}
+                        never gives any homework or tests. One day, you walk into the classroom to retrieve your forgotten notebook. But before you go in,
+                        you see {teacher.name} making out with another teacher. Do you tell on them? ''')
+                        while True:
+                            if ans6 == 'y':
+                                print('''Good, that was the right thing to do.''')
 
 
 
@@ -82,6 +102,17 @@ while True:
                         print('''That's what I like to hear! You may not realize it now, but you're setting yourself up for success in the future. Hopefully when
                         the time comes, you realize that what you did in this moment was the most important decision you could have ever made. Now enough with my spiel,
                         it's time to get back to the story!''')
+                        print('''Well, it's that time now. High School. I skipped middle school since it's boring and saves me some time. Because of your decision
+                        to be a good, hard-working student, you got into Magnet. Unfortunately, depression settles in.''')
+                        human1.dep_level_inc()
+                        print('''Feels bad, and now you're a junior. And you have to do a 20-40 minute presentation on a boring subject. Somehow you manage to do it, but
+                        in the process your depression increases. And you're deciding on which college to go to, but you know you're not good enough to get into the one you want.
+                        Depression increases.''')
+                        human1.dep_level_inc()
+                        print('''Senior year, ayyy. Finally you don't have to stress about anything. You survived.''')
+                        human1.dep_level_dec()
+
+
 
                     # branch 3
                     if ans3 == 'n':
