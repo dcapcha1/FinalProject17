@@ -2,15 +2,17 @@
 
 # info before starting the game
 
-print('''***Some useful info: type 'y' for yes and 'n' for no in response to yes or no questions. Once you reach an ending, it will reset
-\nback to the last decision point. If you want to exit the game (like when you reach an ending) enter a letter that isn't 'y' or 'n' into
-\nan input function that asks for 'y' or 'n.' '***' indicates the start of a piece of text. ''')
+print('''***Some useful info:
+\n-type 'y' for yes and 'n' for no in response to yes or no questions. Once you reach an ending, it will reset back to the last decision point
+\n-If you want to exit the game (like when you reach an ending) enter a letter that isn't 'y' or 'n' into an input function that asks for 'y' or 'n.'
+\n-'***' indicates the start of a piece of text.
+\n-After you complete an ending, it will loop back to the last decision and show the previous text as well, so it may be difficult to view the ending''')
 
 # this is where class info will be
 
 class Human(object):
 
-    def __init__(self, name, action, health, dep_level):
+    def __init__(self, name, health, dep_level):
         self.name = name
         self.health = health
         self.dep_level = dep_level
@@ -37,11 +39,11 @@ class Human(object):
 
 
 while True:
-    human1 = Human(input('''\nWhat is your name? '''), 100, 0, 0)
-    teacher = Human(input('''\nWhat is your favorite teacher's name? '''), 100, 0, 0)
-    person = Human(input('''\nWho do you hate the most? '''), 100, 0, 0)
-    person1 = Human(input('''\nWho is someone you like? '''), 100, 0, 0)
-    person2 = Human(input('''\nWhat is the name of just some random person you know? '''), 100, 0, 0)
+    human1 = Human(input('''\nWhat is your name? '''), 100, 0)
+    teacher = Human(input('''\nWhat is your favorite teacher's name? '''), 100, 0)
+    person = Human(input('''\nWho do you hate the most? '''), 100, 0)
+    person1 = Human(input('''\nWho is someone you like? '''), 100, 0)
+    person2 = Human(input('''\nWhat is the name of just some random person you know? '''), 100, 0)
     print('''\n***Alrighty then, let the story begin!''')
     # first decision, only answer is y
     ans = input(f'''\n***It is pitch-black except for the small circle of light in the distance. Go toward the light, {human1.name}? ''')
@@ -191,7 +193,7 @@ while True:
                             # branch 6
                             if ans6 == 'y':
                                 print(f'''\n***Good, that was the right thing to do. {teacher.name} may have been your favorite teacher, but no one is above the law.''')
-                                print(f'''\n***Unfortunately, since your favorite teacher was fired, the new teacher is terrible. You're getting homework every day and
+                                print(f'''\n***Unfortunately, since your favorite teacher was fired, there's a new teacher who's terrible. You're getting homework every day and
                                 \neven pop quizzes! The person you hate the most, {person.name}, approaches you one day and doesn't look happy about the new teacher.
                                 \nAnd s/he knows you're the reason why there's a new teacher.''')
                                 ans7 = input('''\n***S/he's ready to throw hands. You're ready to throw hands. But do you? ''')
@@ -205,6 +207,9 @@ while True:
                                     print('''\n***Give him/her an uppercut, finish him/her off!''')
                                     human1.fatality()
                                     break
+                                if ans7 == 'n':
+                                    print('''\n***You get beaten hard. Sometimes, violence IS the answer...''')
+
                             # branch 6
                             if ans6 == 'n':
                                 print(f'''\n***Well, at least you're not a snitch. Now, since you decided not to rat {teacher.name} out, he goes on with his sexual adventures. However,
@@ -265,7 +270,6 @@ while True:
                         \nmarket, you buy a lottery ticket like you do every day. You get a nickel and scratch the card. A cherry, a banana, and a strawberry. Then you get hit by a truck and die.
                         \n¯\_(ツ)_/¯''')
                         break
-    # will loop back to y
+    # will loop back to beginning, dead end
     if ans == 'n':
             print('''\n***Come on, you know you wanna go toward the light. That is the only way the story will progress. Now go back and do this again, or you'll have to go through this text again''')
-
