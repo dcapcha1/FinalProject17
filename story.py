@@ -209,6 +209,7 @@ while True:
                                     break
                                 if ans7 == 'n':
                                     print('''\n***You get beaten hard. Sometimes, violence IS the answer...''')
+                                    break
 
                             # branch 6
                             if ans6 == 'n':
