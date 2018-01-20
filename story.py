@@ -1,4 +1,4 @@
-# story of life
+# story with multiple endings
 
 # info before starting the game
 
