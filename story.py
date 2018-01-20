@@ -37,6 +37,7 @@ class Human(object):
         self.health -= damage
         print(f'''\n***Your enemy is now at {self.health} health. Damn, you didn't have to do him like that!''')
 
+# beginning of story, allows the user to make inputs in the code for future use
 
 while True:
     human1 = Human(input('''\nWhat is your name? '''), 100, 0)
@@ -70,7 +71,7 @@ while True:
                             if ans4 == 'y':
                                 ans5 = input('''\n***If you continue to say yes, you will be banished \nto the shadow realm, do you want that? ''')
                                 while True:
-                                    # branch 5
+                                    # branch 5, ending
                                     if ans5 == 'y':
                                         print(f'''\n***You asked for it. So, as time passes by, you see some gangsters coming toward you. You look 'em in the eye and know they're after you.
                                         \nOne of the kind African-American members approaches you and takes out his bat. He beats the crap out of you. First hit.''')
@@ -104,7 +105,7 @@ while True:
                                                 human1.dep_level_dec()
                                                 ans8 = input('''\n***You're finally an adult now. Would you like to work at an office where you're financially secure but bored af? ''')
                                                 while True:
-                                                    # branch 8
+                                                    # branch 8, ending
                                                     if ans8 == 'y':
                                                         print(f'''\n***Alright, I guess you have no ambition to do something more with your life. You sit at your office
                                                         \nchair going through the piles of documents on your desk. You don't even know what you're doing exactly, all
@@ -117,7 +118,7 @@ while True:
                                                         \n{person1.name} leaving you for {person2.name}. It's pretty much the end of the road now. Everything that happened in your life seemed pretty pointless as you reach the
                                                         \nend. Goodbye...''')
                                                         break
-                                                    # branch 8
+                                                    # branch 8, ending
                                                     if ans8 == 'n':
                                                         print(f'''\n***You decided to ditch the office job and go for something different. You're struggling for money right now, but it doesn't matter since you're
                                                         \nhappy. You make your spouse, {person1.name}, happy ;), and life seems purposeful. The unfortunate thing is your spouse gets hit by a car and is murdered.
@@ -126,7 +127,7 @@ while True:
                                                         print(f'''\n***Rip. You're so depressed you go through life with no purpose. You don't even like what you do anymore. {person1.name} meant everything to you and
                                                         \nyou lost him/her. End of the line...''')
                                                         break
-                                            # branch 3
+                                            # branch 3, ending
                                             if ans3 == 'n':
                                                 print('''\n***Well, it's your choice. Nothing I can do about it. Throw away your life if you want. Too bad cuz now you're 40 and work at McDonalds. It's a miracle you can
                                                 \nafford your rent. You have no one in your life since they all moved on to bigger and better things. But things finally turn around. As you go into your local flea
@@ -154,7 +155,7 @@ while True:
                                         human1.dep_level_dec()
                                         ans8 = input('''\n***You're finally an adult now. Would you like to work at an office where you're financially secure but bored af? ''')
                                         while True:
-                                            # branch 8
+                                            # branch 8, ending
                                             if ans8 == 'y':
                                                 print(f'''\n***Alright, I guess you have no ambition to do something more with your life. You sit at your office
                                                 \nchair going through the piles of documents on your desk. You don't even know what you're doing exactly, all
@@ -167,7 +168,7 @@ while True:
                                                 \n{person1.name} leaving you for {person2.name}. It's pretty much the end of the road now. Everything that happened in your life seemed pretty pointless as you reach the
                                                 \nend. Goodbye...''')
                                                 break
-                                            # branch 8
+                                            # branch 8, ending
                                             if ans8 == 'n':
                                                 print(f'''\n***You decided to ditch the office job and go for something different. You're struggling for money right now, but it doesn't matter since you're
                                                 \nhappy. You make your spouse, {person1.name}, happy ;), and life seems purposeful. The unfortunate thing is your spouse gets hit by a car and is murdered.
@@ -176,7 +177,7 @@ while True:
                                                 print(f'''\n***Rip. You're so depressed you go through life with no purpose. You don't even like what you do anymore. {person1.name} meant everything to you and
                                                 \nyou lost him/her. End of the line...''')
                                                 break
-                                    # branch 3
+                                    # branch 3, ending
                                     if ans3 == 'n':
                                         print('''\n***Well, it's your choice. Nothing I can do about it. Throw away your life if you want. Too bad cuz now you're 40 and work at McDonalds. It's a miracle you can
                                         \nafford your rent. You have no one in your life since they all moved on to bigger and better things. But things finally turn around. As you go into your local flea
@@ -197,7 +198,7 @@ while True:
                                 \neven pop quizzes! The person you hate the most, {person.name}, approaches you one day and doesn't look happy about the new teacher.
                                 \nAnd s/he knows you're the reason why there's a new teacher.''')
                                 ans7 = input('''\n***S/he's ready to throw hands. You're ready to throw hands. But do you? ''')
-                                # branch 7
+                                # branch 7, ending
                                 if ans7 == 'y':
                                     print('''\n***You throw the first punch.''')
                                     human1.fight()
@@ -207,11 +208,12 @@ while True:
                                     print('''\n***Give him/her an uppercut, finish him/her off!''')
                                     human1.fatality()
                                     break
+                                # branch 7, ending
                                 if ans7 == 'n':
                                     print('''\n***You get beaten hard. Sometimes, violence IS the answer...''')
                                     break
 
-                            # branch 6
+                            # branch 6, ending
                             if ans6 == 'n':
                                 print(f'''\n***Well, at least you're not a snitch. Now, since you decided not to rat {teacher.name} out, he goes on with his sexual adventures. However,
                                 \nyou become one of his victims. {teacher.name} approaches you and gropes you in a place you don't wanna be groped. You run away and tell another
@@ -242,7 +244,7 @@ while True:
                         human1.dep_level_dec()
                         ans8 = input('''\n***You're finally an adult now. Would you like to work at an office where you're financially secure but bored af? ''')
                         while True:
-                            # branch 8
+                            # branch 8, ending
                             if ans8 == 'y':
                                 print(f'''\n***Alright, I guess you have no ambition to do something more with your life. You sit at your office
                                 \nchair going through the piles of documents on your desk. You don't even know what you're doing exactly, all
@@ -255,7 +257,7 @@ while True:
                                 \n{person1.name} leaving you for {person2.name}. It's pretty much the end of the road now. Everything that happened in your life seemed pretty pointless as you reach the
                                 \nend. Goodbye...''')
                                 break
-                            # branch 8
+                            # branch 8, ending
                             if ans8 == 'n':
                                 print(f'''\n***You decided to ditch the office job and go for something different. You're struggling for money right now, but it doesn't matter since you're
                                 \nhappy. You make your spouse, {person1.name}, happy ;), and life seems purposeful. The unfortunate thing is your spouse gets hit by a car and is murdered.
@@ -264,7 +266,7 @@ while True:
                                 print(f'''\n***Rip. You're so depressed you go through life with no purpose. You don't even like what you do anymore. {person1.name} meant everything to you and
                                 \nyou lost him/her. End of the line...''')
                                 break
-                    # branch 3
+                    # branch 3, ending
                     if ans3 == 'n':
                         print('''\n***Well, it's your choice. Nothing I can do about it. Throw away your life if you want. Too bad cuz now you're 40 and work at McDonalds. It's a miracle you can
                         \nafford your rent. You have no one in your life since they all moved on to bigger and better things. But things finally turn around. As you go into your local flea
