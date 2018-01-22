@@ -10,3 +10,4 @@ will run using the given inputs, making a few endings a bit more personal.
 
 Sources:
 Google- used to find out certain lines of code that I needed to use, such as \n to better format text
+Gerstein- told me how to incorporate while loops to better run my code
